@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header>
       <CssBaseline />
-      <AppBar position="static" >
+      <AppBar position="fixed" style={{ background: '#2E3B55' }} >
         <Toolbar>
           <Typography
           className={classes.title}

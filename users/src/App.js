@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
-import Footer from './components/footerComponents/Footer';
+import Footer from './components/footer/Footer';
 
-import TopNav from './components/headerComponents/TopNav';
+import TopNav from './components/header/TopNav';
 import HomeScreen from './screens/HomeScreen';
 import UserDetailsScreen from './screens/UserDetailsScreen';
 

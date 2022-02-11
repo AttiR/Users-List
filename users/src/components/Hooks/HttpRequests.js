@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export const useAxiosGet = (url) => {
+export const useGetUsers = (url) => {
   const [request, setRequest] = useState([]);
 
-  
-
   useEffect(() => {
-    const getBreweryData = async () => {
+    const getUsersData = async () => {
         try {
           const res = await axios.get(url);
           setRequest(res.data);
@@ -15,7 +13,8 @@ export const useAxiosGet = (url) => {
           console.log(error);
         }
       };
-      getBreweryData();
+      
+      getUsersData();
    
   }, [url]);
 

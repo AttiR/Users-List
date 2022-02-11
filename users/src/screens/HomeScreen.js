@@ -1,6 +1,6 @@
 import React from 'react';
-import Intro from '../components/headerComponents/Intro';
-import UsersCard from '../components/bodyComponents/UsersCard';
+import Intro from '../components/header/Intro';
+import UsersCard from '../components/UsersCard';
 import { CssBaseline } from '@material-ui/core';
 
 const HomeScreen = () => {
