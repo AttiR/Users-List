@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 import { CssBaseline, Grid, Container } from '@material-ui/core';
-import useStyles from '../Styles';
+import useStyles from './cardStyles';
 
-import { getUsersData } from './networking/HttpRequests';
-import UserCard from './userCards/UserCard';
+import { getUsersData } from '../networking/HttpRequests';
+import UserCard from './UserCard';
 
 const UsersCard = () => {
   const clases = useStyles();
@@ -16,7 +16,7 @@ const UsersCard = () => {
   useEffect(() => {
     const fetchingUsers = async () => {
       setUsers(await getUsersData(url));
-      console.log(getUsersData(url));
+      
     };
 
     fetchingUsers();

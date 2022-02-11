@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { CssBaseline, Toolbar, Typography, AppBar } from '@material-ui/core';
-import useStyles from '../../Styles';
+import useStyles from './headerStyles';
 
 const Header = () => {
 

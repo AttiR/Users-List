@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   CssBaseline,
@@ -7,32 +7,27 @@ import {
   Grid,
   Container,
   CardContent,
- 
   Button,
 } from '@material-ui/core';
-import useStyles from '../Styles';
+import useStyles from './cardStyles';
 import { Link } from 'react-router-dom';
-import {  getUsersData } from '../components/networking/HttpRequests';
+import { getUsersData } from '../networking/HttpRequests';
 
-const UserDetailsScreen = () => {
-  const params = useParams();
-  const id = params.id;
-  const [user, setUser] = useState([])
+const UserDetailsCard = () => {
   const classes = useStyles();
 
+  const params = useParams();
+  const id = params.id;
+  const [user, setUser] = useState([]);
 
   const url = `https://jsonplaceholder.typicode.com/users/${id}`;
 
-  useEffect (() => {
-    const fetchingUser = async()=>{
-     setUser(await getUsersData(url));
-    
-   }
-
-   fetchingUser()
-  
- }, [url]);
-  
+  useEffect(() => {
+    const fetchingUser = async () => {
+      setUser(await getUsersData(url));
+    };
+    fetchingUser();
+  }, [url]);
 
   return (
     <>
@@ -72,4 +67,4 @@ const UserDetailsScreen = () => {
   );
 };
 
-export default UserDetailsScreen;
+export default UserDetailsCard;

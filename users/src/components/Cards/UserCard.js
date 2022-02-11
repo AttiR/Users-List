@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import useStyles from '../../Styles';
+import useStyles from './cardStyles';
 
 const UserCard = ({ user }) => {
   const classes = useStyles();
