@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CssBaseline, Toolbar, Typography, AppBar } from '@mui/material';
+import { CssBaseline, Toolbar, Typography, AppBar } from '@material-ui/core';
 import useStyles from '../../Styles';
 
 const Header = () => {
