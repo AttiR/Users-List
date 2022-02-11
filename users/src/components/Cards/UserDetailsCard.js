@@ -7,11 +7,11 @@ import {
   Grid,
   Container,
   CardContent,
-  Button,
 } from '@material-ui/core';
 import useStyles from './cardStyles';
 import { Link } from 'react-router-dom';
 import { getUsersData } from '../networking/HttpRequests';
+import LinkButton from '../buttons/LinkButton';
 
 const UserDetailsCard = () => {
   const classes = useStyles();
@@ -33,9 +33,7 @@ const UserDetailsCard = () => {
     <>
       <CssBaseline />
       <Container className={classes.cardGrid} maxWidth="md">
-        <Button color="primary" component={Link} to="/">
-          Go Back
-        </Button>
+        <LinkButton title="Go Back" color="secondary" component={Link} to="/" />
 
         <Grid
           container

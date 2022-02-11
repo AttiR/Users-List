@@ -1,12 +1,9 @@
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  // Top Nav
-  title: {
-    display: 'block',
+  userDetailsButton: {
+    marginTop: '5px',
   },
-
-  
 }));
 
 export default useStyles;

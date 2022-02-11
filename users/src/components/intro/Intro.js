@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography, CssBaseline } from '@material-ui/core';
-import useStyles from '../../Styles';
+import useStyles from './introStyles';
 
 const Intro = () => {
   const clases = useStyles();
