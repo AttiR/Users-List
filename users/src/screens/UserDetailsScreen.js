@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import {
   CssBaseline,
@@ -12,18 +12,27 @@ import {
 } from '@material-ui/core';
 import useStyles from '../Styles';
 import { Link } from 'react-router-dom';
-import {  useGetUsers } from '../components/hooks/HttpRequests';
+import {  getUsersData } from '../components/networking/HttpRequests';
 
 const UserDetailsScreen = () => {
   const params = useParams();
   const id = params.id;
-
+  const [user, setUser] = useState([])
   const classes = useStyles();
+
 
   const url = `https://jsonplaceholder.typicode.com/users/${id}`;
 
-  // from Hooks Componets
-  let userDetails = useGetUsers(url);
+  useEffect (() => {
+    const fetchingUsers = async()=>{
+     setUser(await getUsersData(url));
+    
+   }
+
+   fetchingUsers()
+  
+ }, [url]);
+  
 
   return (
     <>
@@ -48,11 +57,11 @@ const UserDetailsScreen = () => {
                   gutterBottom
                   style={{ color: 'orange' }}
                 >
-                  {userDetails.name}
+                  {user.name}
                 </Typography>
 
                 <Typography>
-                  <strong>type:</strong> {userDetails.username}
+                  <strong>type:</strong> {user.username}
                 </Typography>
               </CardContent>
             </Card>

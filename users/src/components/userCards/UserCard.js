@@ -1,45 +1,29 @@
-import React from 'react';
-
 import {
-  CssBaseline,
-  Typography,
-  Card,
-  Grid,
-  Container,
-  CardContent,
-  CardActions,
-  Button,
   Avatar,
   Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Grid,
+  Typography,
 } from '@material-ui/core';
-import useStyles from '../Styles';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useGetUsers } from './hooks/HttpRequests';
+import useStyles from '../../Styles';
 
-
-const UsersCard = () => {
-  const clases = useStyles();
+const UserCard = ({ user }) => {
+  const classes = useStyles();
   const navigate = useNavigate();
-
-  const url = 'https://jsonplaceholder.typicode.com/users';
-
-  // from Hooks components
-  let users = useGetUsers(url);
-
   return (
     <>
-      <CssBaseline />
-      <Container className={clases.cardGrid} maxWidth="md">
-        <Grid container spacing={6}>
-          {users.map((user) => {
-            return (
-              <Grid key={user.id} item xs={12} sm={6} md={4}>
-                <Card className={clases.card}>
+     <Grid key={user.id} item xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
                   <Avatar style={{ width: '100px', height: '100px' }}>
                     <Typography variant="h3">{user.name[0]}</Typography>
                   </Avatar>
 
-                  <CardContent className={clases.CardContent}>
+                  <CardContent className={classes.CardContent}>
 
                   <Box style={{marginBottom:'20px'}}>
                   <Typography variant="h6" align="center">
@@ -64,19 +48,15 @@ const UsersCard = () => {
                       onClick={(e) => {
                         navigate(`/${user.id}`);
                       }}
-                      className={clases.userDetailsButton}
+                      className={classes.userDetailsButton}
                     >
                       View Details
                     </Button>
                   </CardActions>
                 </Card>
               </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
     </>
   );
 };
 
-export default UsersCard;
+export default UserCard;
