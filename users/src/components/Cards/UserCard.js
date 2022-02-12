@@ -17,38 +17,40 @@ const UserCard = ({ user }) => {
   const navigate = useNavigate();
   return (
     <>
-      <Grid key={user.id} item xs={12} sm={6} md={4}>
-        <Card className={classes.card}>
-          <Avatar style={{ width: '100px', height: '100px' }}>
-            <Typography variant="h3">{user.name[0]}</Typography>
-          </Avatar>
+      {user ? (
+        <Grid key={user.id} item xs={12} sm={6} md={4}>
+          <Card className={classes.card}>
+            <Avatar style={{ width: '100px', height: '100px' }}>
+              <Typography variant="h3">{user.name[0]}</Typography>
+            </Avatar>
 
-          <CardContent className={classes.CardContent}>
-            <Box style={{ marginBottom: '20px' }}>
-              <Typography variant="h6" align="center">
-                {user.name}
-              </Typography>
-              <Typography align="center" color="textSecondary">
-                @{user?.username}
-              </Typography>
-            </Box>
+            <CardContent className={classes.CardContent}>
+              <Box style={{ marginBottom: '20px' }}>
+                <Typography variant="h6" align="center">
+                  {user.name}
+                </Typography>
+                <Typography align="center" color="textSecondary">
+                  @{user?.username}
+                </Typography>
+              </Box>
 
-            <Typography align="center">
-              {' '}
-              <a href={`mailto:${user.email}`}>{user.email}</a>
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <LinkButton
-              title="View Details"
-              color="secondary"
-              buttonClick={(e) => {
-                navigate(`/${user.id}`);
-              }}
-            />
-          </CardActions>
-        </Card>
-      </Grid>
+              <Typography align="center">
+                {' '}
+                <a href={`mailto:${user.email}`}>{user.email}</a>
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <LinkButton
+                title="View Details"
+                color="secondary"
+                buttonClick={(e) => {
+                  navigate(`/${user.id}`);
+                }}
+              />
+            </CardActions>
+          </Card>
+        </Grid>
+      ) : null}
     </>
   );
 };
