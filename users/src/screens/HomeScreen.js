@@ -6,7 +6,7 @@ import UsersCard from '../components/Cards/UsersCard';
 const HomeScreen = () => {
   return (
     <>
-      <Intro />
+      <Intro  primaryText='Users List App' secondaryText=' The App Shows  the All Users Details such as Name, username, email, phone, address and business etc.' />
       <UsersCard />
     </>
   );

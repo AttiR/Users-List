@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-
-
   // Card
   cardGrid: {
     padding: '20px 5px',
@@ -23,6 +21,18 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '5px',
   },
 
+  // Details Card
+  detailsCard: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+
+    padding: theme.spacing(3, 0, 3),
+  },
+
+  Cardwrap: {
+    width: '100%',
+  },
 }));
 
 export default useStyles;
